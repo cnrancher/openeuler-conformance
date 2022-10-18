@@ -1,0 +1,473 @@
+GLOB sdist-make: /opt/rancher-tests/integration/setup.py
+rancher create: /opt/rancher-tests/integration/.tox/rancher
+rancher installdeps: -rrequirements.txt
+rancher inst: /opt/rancher-tests/integration/.tox/.tmp/package/1/IntegrationTests-0.1.zip
+rancher installed: argcomplete==2.0.0,atomicwrites==1.4.1,attrs==22.1.0,cachetools==5.2.0,certifi==2022.9.24,cffi==1.15.1,chardet==3.0.4,click==8.1.3,client-python @ git+https://github.com/rancher/client-python.git@1ecfc3e6a300f5f336da4e4416c46c50d544fd77,cryptography==3.4.7,execnet==1.9.0,Flask==2.0.2,google-auth==2.13.0,idna==2.8,IntegrationTests @ file:///opt/rancher-tests/integration/.tox/.tmp/package/1/IntegrationTests-0.1.zip,itsdangerous==2.1.2,Jinja2==3.1.2,kubernetes==12.0.1,MarkupSafe==2.1.1,more-itertools==8.14.0,netaddr==0.7.19,oauthlib==3.2.2,pluggy==1.0.0,py==1.11.0,pyasn1==0.4.8,pyasn1-modules==0.2.8,pycparser==2.21,PyJWT==2.4.0,pytest==4.4.1,pytest-forked==1.4.0,pytest-repeat==0.8.0,pytest-xdist==1.28.0,python-dateutil==2.8.2,PyYAML==5.4.1,requests==2.21.0,requests-oauthlib==1.3.1,rsa==4.9,six==1.16.0,urllib3==1.24.3,websocket-client==0.56.0,Werkzeug==2.2.2
+rancher run-test-pre: PYTHONHASHSEED='898331546'
+rancher run-test: commands[0] | pytest --durations=20 -rfE -v -m 'not nonparallel' -n 4
+============================= test session starts ==============================
+platform linux -- Python 3.9.9, pytest-4.4.1, py-1.11.0, pluggy-1.0.0 -- /opt/rancher-tests/integration/.tox/rancher/bin/python
+cachedir: .tox/rancher/.pytest_cache
+rootdir: /opt/rancher-tests/integration
+plugins: forked-1.4.0, repeat-0.8.0, xdist-1.28.0
+gw0 I / gw1 I / gw2 I / gw3 I
+[gw0] linux Python 3.9.9 cwd: /opt/rancher-tests/integration/suite
+[gw1] linux Python 3.9.9 cwd: /opt/rancher-tests/integration/suite
+[gw2] linux Python 3.9.9 cwd: /opt/rancher-tests/integration/suite
+[gw3] linux Python 3.9.9 cwd: /opt/rancher-tests/integration/suite
+[gw0] Python 3.9.9 (main, Sep 14 2022, 17:42:14)  -- [GCC 10.3.1]
+[gw1] Python 3.9.9 (main, Sep 14 2022, 17:42:14)  -- [GCC 10.3.1]
+[gw2] Python 3.9.9 (main, Sep 14 2022, 17:42:14)  -- [GCC 10.3.1]
+[gw3] Python 3.9.9 (main, Sep 14 2022, 17:42:14)  -- [GCC 10.3.1]
+gw0 [211] / gw1 [211] / gw2 [211] / gw3 [211]
+
+scheduling tests via LoadScheduling
+
+test_auth_configs.py::test_auth_config_secrets 
+test_alert.py::test_add_notifier 
+[gw1] [  0%] SKIPPED test_alert.py::test_add_notifier 
+test_auth_configs.py::test_auth_configs 
+test_catalog.py::test_catalog 
+test_alert.py::test_alert_access 
+[gw3] [  0%] PASSED test_auth_configs.py::test_auth_config_secrets 
+test_catalog.py::test_global_catalog_template_access 
+[gw2] [  1%] PASSED test_auth_configs.py::test_auth_configs 
+test_catalog.py::test_invalid_catalog_chars 
+[gw2] [  1%] PASSED test_catalog.py::test_invalid_catalog_chars 
+test_catalog.py::test_cannot_delete_system_catalog 
+[gw2] [  2%] PASSED test_catalog.py::test_cannot_delete_system_catalog 
+test_catalog.py::test_invalid_catalog_chart_names 
+[gw1] [  2%] PASSED test_catalog.py::test_catalog 
+test_catalog.py::test_relative_paths 
+[gw3] [  3%] PASSED test_catalog.py::test_global_catalog_template_access 
+test_catalog.py::test_system_catalog_missing_remove_link 
+[gw3] [  3%] PASSED test_catalog.py::test_system_catalog_missing_remove_link 
+test_catalog.py::test_invalid_catalog_chart_urls 
+[gw2] [  4%] PASSED test_catalog.py::test_invalid_catalog_chart_names 
+test_cluster.py::test_cluster_node_count 
+[gw2] [  4%] PASSED test_cluster.py::test_cluster_node_count 
+[gw3] [  5%] PASSED test_catalog.py::test_invalid_catalog_chart_urls 
+test_cluster_catalog.py::test_cluster_catalog_creation 
+test_cluster_defaults.py::test_generic_initial_conditions 
+[gw2] [  5%] PASSED test_cluster_defaults.py::test_generic_initial_conditions 
+test_cluster_defaults.py::test_import_initial_conditions 
+[gw2] [  6%] PASSED test_cluster_defaults.py::test_import_initial_conditions 
+test_cluster_role_template_bindings.py::test_must_have_target 
+[gw2] [  6%] PASSED test_cluster_role_template_bindings.py::test_must_have_target 
+test_clustertemplate.py::test_create_template_revision_k8s_translation 
+[gw2] [  7%] PASSED test_clustertemplate.py::test_create_template_revision_k8s_translation 
+test_clustertemplate.py::test_create_cluster_validations 
+[gw2] [  7%] PASSED test_clustertemplate.py::test_create_cluster_validations 
+test_clustertemplate.py::test_permissions_removed_on_downgrading_access 
+[gw2] [  8%] PASSED test_clustertemplate.py::test_permissions_removed_on_downgrading_access 
+test_clustertemplate.py::test_create_cluster_with_invalid_revision 
+[gw2] [  8%] PASSED test_clustertemplate.py::test_create_cluster_with_invalid_revision 
+test_clustertemplate.py::test_save_as_template_action 
+[gw2] [  9%] PASSED test_clustertemplate.py::test_save_as_template_action 
+test_clustertemplate.py::test_update_cluster_monitoring 
+[gw2] [  9%] PASSED test_clustertemplate.py::test_update_cluster_monitoring 
+test_deployment.py::test_dep_creation_kubectl 
+[gw2] [  9%] PASSED test_deployment.py::test_dep_creation_kubectl 
+test_deployment.py::test_port 
+[gw2] [ 10%] PASSED test_deployment.py::test_port 
+test_dns.py::test_dns_fields 
+[gw2] [ 10%] PASSED test_dns.py::test_dns_fields 
+test_dns.py::test_dns_hostname 
+[gw2] [ 11%] PASSED test_dns.py::test_dns_hostname 
+test_dns.py::test_dns_ips 
+[gw2] [ 11%] PASSED test_dns.py::test_dns_ips 
+test_etcdbackups.py::test_backups_manage_role 
+[gw1] [ 12%] PASSED test_catalog.py::test_relative_paths 
+test_catalog.py::test_embedded_system_catalog_missing_edit_link 
+[gw1] [ 12%] PASSED test_catalog.py::test_embedded_system_catalog_missing_edit_link 
+test_catalog.py::test_refresh_catalog_access 
+[gw1] [ 13%] PASSED test_catalog.py::test_refresh_catalog_access 
+test_cluster_defaults.py::test_generic_initial_defaults 
+[gw1] [ 13%] SKIPPED test_cluster_defaults.py::test_generic_initial_defaults 
+test_cluster_defaults.py::test_psp_enabled_set 
+[gw3] [ 14%] PASSED test_cluster_catalog.py::test_cluster_catalog_creation 
+test_cluster_defaults.py::test_eks_cluster_immutable_subnets 
+[gw3] [ 14%] PASSED test_cluster_defaults.py::test_eks_cluster_immutable_subnets 
+test_cluster_defaults.py::test_rke_k8s_deprecated_versions 
+[gw3] [ 15%] PASSED test_cluster_defaults.py::test_rke_k8s_deprecated_versions 
+test_cluster_role_template_bindings.py::test_cannot_update_subjects_or_cluster 
+[gw3] [ 15%] PASSED test_cluster_role_template_bindings.py::test_cannot_update_subjects_or_cluster 
+test_clustertemplate.py::test_default_pod_sec 
+[gw1] [ 16%] PASSED test_cluster_defaults.py::test_psp_enabled_set 
+test_cluster_role_template_bindings.py::test_cannot_target_users_and_group 
+[gw1] [ 16%] PASSED test_cluster_role_template_bindings.py::test_cannot_target_users_and_group 
+test_clustertemplate.py::test_create_cluster_template_with_revision 
+[gw1] [ 17%] PASSED test_clustertemplate.py::test_create_cluster_template_with_revision 
+test_clustertemplate.py::test_create_cluster_with_template 
+[gw2] [ 17%] PASSED test_etcdbackups.py::test_backups_manage_role 
+test_etcdbackups.py::test_standard_users_cannot_access_backups 
+[gw2] [ 18%] PASSED test_etcdbackups.py::test_standard_users_cannot_access_backups 
+test_features.py::test_cannot_create 
+[gw2] [ 18%] PASSED test_features.py::test_cannot_create 
+[gw1] [ 18%] PASSED test_clustertemplate.py::test_create_cluster_with_template 
+test_features.py::test_can_list 
+test_clustertemplate.py::test_updated_members_revision_access 
+[gw2] [ 19%] PASSED test_features.py::test_can_list 
+test_global_role_bindings.py::test_cannot_update_global_role 
+[gw3] [ 19%] PASSED test_clustertemplate.py::test_default_pod_sec 
+[gw2] [ 20%] PASSED test_global_role_bindings.py::test_cannot_update_global_role 
+test_clustertemplate.py::test_creation_standard_user 
+test_global_role_bindings.py::test_globalrole_must_exist 
+[gw2] [ 20%] PASSED test_global_role_bindings.py::test_globalrole_must_exist 
+test_globaldns.py::test_cloudflare_provider_proxy_setting 
+[gw1] [ 21%] PASSED test_clustertemplate.py::test_updated_members_revision_access 
+[gw2] [ 21%] PASSED test_globaldns.py::test_cloudflare_provider_proxy_setting 
+test_globaldns.py::test_dns_fqdn_hostname 
+test_clustertemplate.py::test_member_accesstype_check 
+[gw2] [ 22%] PASSED test_globaldns.py::test_dns_fqdn_hostname 
+test_globaldns.py::test_globaldnsprovider_secret 
+[gw3] [ 22%] PASSED test_clustertemplate.py::test_creation_standard_user 
+test_clustertemplate.py::test_required_template_question 
+[gw2] [ 23%] PASSED test_globaldns.py::test_globaldnsprovider_secret 
+test_hpa.py::test_hpa 
+[gw3] [ 23%] PASSED test_clustertemplate.py::test_required_template_question 
+test_clustertemplate.py::test_disable_template_revision 
+[gw1] [ 24%] PASSED test_clustertemplate.py::test_member_accesstype_check 
+[gw2] [ 24%] PASSED test_hpa.py::test_hpa 
+[gw3] [ 25%] PASSED test_clustertemplate.py::test_disable_template_revision 
+test_ingress.py::test_ingress_fields 
+test_clustertemplate.py::test_template_access 
+test_clustertemplate.py::test_cluster_desc_update 
+[gw2] [ 25%] PASSED test_ingress.py::test_ingress_fields 
+test_ingress.py::test_ingress 
+[gw3] [ 26%] PASSED test_clustertemplate.py::test_cluster_desc_update 
+test_kontainer_engine_config.py::test_gke_config_appears_correctly 
+[gw3] [ 26%] PASSED test_kontainer_engine_config.py::test_gke_config_appears_correctly 
+[gw1] [ 27%] PASSED test_clustertemplate.py::test_template_access 
+[gw2] [ 27%] PASSED test_ingress.py::test_ingress 
+test_kontainer_engine_config.py::test_eks_config_appears_correctly 
+test_ingress.py::test_ingress_rules_same_hostPortPath 
+test_global_role_bindings.py::test_cannot_update_subject 
+[gw3] [ 27%] PASSED test_kontainer_engine_config.py::test_eks_config_appears_correctly 
+test_kontainer_engine_config.py::test_rke_config_appears_correctly 
+[gw3] [ 28%] PASSED test_kontainer_engine_config.py::test_rke_config_appears_correctly 
+test_kontainer_engine_config.py::test_rke_config_no_change_k8sversion_addon 
+[gw3] [ 28%] PASSED test_kontainer_engine_config.py::test_rke_config_no_change_k8sversion_addon 
+test_kontainer_engine_config.py::test_rke_config_no_change_k8sversion_np 
+[gw1] [ 29%] PASSED test_global_role_bindings.py::test_cannot_update_subject 
+[gw3] [ 29%] PASSED test_kontainer_engine_config.py::test_rke_config_no_change_k8sversion_np 
+[gw2] [ 30%] PASSED test_ingress.py::test_ingress_rules_same_hostPortPath 
+test_kontainer_engine_validation.py::test_min_nodes_cannot_be_greater_than_max 
+test_kontainer_drivers.py::test_builtin_drivers_are_present 
+test_global_role_bindings.py::test_grb_crb_lifecycle 
+[gw1] [ 30%] PASSED test_global_role_bindings.py::test_grb_crb_lifecycle 
+[gw2] [ 31%] PASSED test_kontainer_drivers.py::test_builtin_drivers_are_present 
+test_kontainer_drivers.py::test_kontainer_driver_links 
+test_global_role_bindings.py::test_grb_targets_user_or_group 
+[gw1] [ 31%] PASSED test_global_role_bindings.py::test_grb_targets_user_or_group 
+test_global_roles.py::test_only_admin_can_crud_global_roles 
+[gw2] [ 32%] PASSED test_kontainer_drivers.py::test_kontainer_driver_links 
+test_kontainer_engine_annotations.py::test_eks_cluster_gets_temp_security_credentials_annotation 
+[gw2] [ 32%] PASSED test_kontainer_engine_annotations.py::test_eks_cluster_gets_temp_security_credentials_annotation 
+test_kontainer_engine_annotations.py::test_eks_does_not_get_temp_security_creds_annotation_no_field 
+[gw2] [ 33%] PASSED test_kontainer_engine_annotations.py::test_eks_does_not_get_temp_security_creds_annotation_no_field 
+test_kontainer_engine_annotations.py::test_eks_does_not_get_temp_security_creds_annotation_empty_field 
+[gw2] [ 33%] PASSED test_kontainer_engine_annotations.py::test_eks_does_not_get_temp_security_creds_annotation_empty_field 
+test_kontainer_engine_annotations.py::test_editing_eks_cluster_gives_temp_creds_annotation 
+[gw1] [ 34%] PASSED test_global_roles.py::test_only_admin_can_crud_global_roles 
+test_global_roles.py::test_admin_can_only_edit_builtin_global_roles 
+[gw1] [ 34%] PASSED test_global_roles.py::test_admin_can_only_edit_builtin_global_roles 
+test_globaldns.py::test_dns_fqdn_unique 
+[gw1] [ 35%] PASSED test_globaldns.py::test_dns_fqdn_unique 
+test_globaldns.py::test_dns_provider_deletion 
+[gw1] [ 35%] PASSED test_globaldns.py::test_dns_provider_deletion 
+test_globaldns.py::test_share_globaldns_provider_entry 
+[gw1] [ 36%] PASSED test_globaldns.py::test_share_globaldns_provider_entry 
+test_globaldns.py::test_user_access_global_dns 
+[gw1] [ 36%] PASSED test_globaldns.py::test_user_access_global_dns 
+test_globaldns.py::test_update_gdns_entry 
+[gw1] [ 36%] PASSED test_globaldns.py::test_update_gdns_entry 
+test_globaldns.py::test_create_globaldns_provider_regular_user 
+[gw1] [ 37%] PASSED test_globaldns.py::test_create_globaldns_provider_regular_user 
+test_node.py::test_admin_access_to_node_template 
+[gw1] [ 37%] PASSED test_node.py::test_admin_access_to_node_template 
+test_node.py::test_user_access_to_node_template 
+[gw1] [ 38%] PASSED test_node.py::test_user_access_to_node_template 
+test_node.py::test_admin_access_user_template 
+[gw1] [ 38%] PASSED test_node.py::test_admin_access_user_template 
+test_node.py::test_no_node_template 
+[gw1] [ 39%] PASSED test_node.py::test_no_node_template 
+test_node_templates.py::test_legacy_template_migrate_and_delete 
+[gw1] [ 39%] PASSED test_node_templates.py::test_legacy_template_migrate_and_delete 
+test_node_templates.py::test_node_template_namespace 
+[gw1] [ 40%] PASSED test_node_templates.py::test_node_template_namespace 
+test_node_templates.py::test_user_can_only_view_own_template 
+[gw1] [ 40%] PASSED test_node_templates.py::test_user_can_only_view_own_template 
+test_notifier.py::test_notifier_smtp_password 
+[gw1] [ 41%] PASSED test_notifier.py::test_notifier_smtp_password 
+test_password_store.py::test_cluster_logging_elasticsearch 
+[gw1] [ 41%] PASSED test_password_store.py::test_cluster_logging_elasticsearch 
+test_password_store.py::test_cluster_logging_fluentd 
+[gw1] [ 42%] PASSED test_password_store.py::test_cluster_logging_fluentd 
+test_password_store.py::test_cluster_logging_null 
+[gw1] [ 42%] PASSED test_password_store.py::test_cluster_logging_null 
+test_persistent_volume.py::test_persistent_volume_update 
+[gw1] [ 43%] PASSED test_persistent_volume.py::test_persistent_volume_update 
+test_persistent_volume_claim.py::test_cannot_create_azure_no_accountstoragetype 
+[gw0] [ 43%] PASSED test_alert.py::test_alert_access 
+test_auth_configs.py::test_auth_label 
+[gw1] [ 44%] PASSED test_persistent_volume_claim.py::test_cannot_create_azure_no_accountstoragetype 
+test_persistent_volume_claim.py::test_can_create_azure_any_accountstoragetype 
+[gw0] [ 44%] PASSED test_auth_configs.py::test_auth_label 
+[gw1] [ 45%] PASSED test_persistent_volume_claim.py::test_can_create_azure_any_accountstoragetype 
+test_catalog.py::test_user_can_list_global_catalog 
+test_persistent_volume_claim.py::test_can_create_pvc_no_storage_no_vol 
+[gw1] [ 45%] PASSED test_persistent_volume_claim.py::test_can_create_pvc_no_storage_no_vol 
+[gw0] [ 45%] PASSED test_catalog.py::test_user_can_list_global_catalog 
+test_pod_security_policies.py::test_service_accounts_have_role_binding 
+test_catalog.py::test_cannot_update_system_if_embedded 
+[gw0] [ 46%] PASSED test_catalog.py::test_cannot_update_system_if_embedded 
+test_catalog.py::test_catalog_has_helmversion 
+[gw0] [ 46%] PASSED test_catalog.py::test_catalog_has_helmversion 
+test_cluster_catalog.py::test_cluster_catalog_templates_access 
+[gw0] [ 47%] PASSED test_cluster_catalog.py::test_cluster_catalog_templates_access 
+test_cluster_defaults.py::test_rke_initial_conditions 
+[gw0] [ 47%] PASSED test_cluster_defaults.py::test_rke_initial_conditions 
+test_cluster_defaults.py::test_save_as_template_action_rbac 
+[gw0] [ 48%] PASSED test_cluster_defaults.py::test_save_as_template_action_rbac 
+test_cluster_scan.py::test_run_scan_not_available_on_not_ready_cluster 
+[gw0] [ 48%] PASSED test_cluster_scan.py::test_run_scan_not_available_on_not_ready_cluster 
+test_clustertemplate.py::test_check_default_revision 
+[gw0] [ 49%] PASSED test_clustertemplate.py::test_check_default_revision 
+test_clustertemplate.py::test_revision_creation_permission 
+[gw0] [ 49%] PASSED test_clustertemplate.py::test_revision_creation_permission 
+test_clustertemplate.py::test_secret_template_answers 
+[gw0] [ 50%] PASSED test_clustertemplate.py::test_secret_template_answers 
+test_clustertemplate.py::test_template_delete_by_members 
+[gw0] [ 50%] PASSED test_clustertemplate.py::test_template_delete_by_members 
+test_project_catalog.py::test_user_addition_after_creating_project_catalog 
+[gw0] [ 51%] PASSED test_project_catalog.py::test_user_addition_after_creating_project_catalog 
+test_project_catalog.py::test_project_catalog_access_before_app_creation 
+[gw1] [ 51%] PASSED test_pod_security_policies.py::test_service_accounts_have_role_binding 
+test_pod_security_policies.py::test_incorrect_pspt 
+[gw1] [ 52%] PASSED test_pod_security_policies.py::test_incorrect_pspt 
+test_pod_security_policies.py::test_pspt_binding 
+[gw2] [ 52%] PASSED test_kontainer_engine_annotations.py::test_editing_eks_cluster_gives_temp_creds_annotation 
+test_namespaced_secrets.py::test_namespaced_ssh_auth 
+[gw1] [ 53%] PASSED test_pod_security_policies.py::test_pspt_binding 
+test_pod_security_policies.py::test_psp_annotations 
+[gw1] [ 53%] PASSED test_pod_security_policies.py::test_psp_annotations 
+test_project_catalog.py::test_project_catalog_creation 
+[gw2] [ 54%] PASSED test_namespaced_secrets.py::test_namespaced_ssh_auth 
+test_node.py::test_node_fields 
+[gw2] [ 54%] PASSED test_node.py::test_node_fields 
+test_node.py::test_node_template_delete 
+[gw0] [ 54%] PASSED test_project_catalog.py::test_project_catalog_access_before_app_creation 
+test_project_resource_quota.py::test_namespace_resource_quota 
+[gw0] [ 55%] PASSED test_project_resource_quota.py::test_namespace_resource_quota 
+test_project_resource_quota.py::test_project_resource_quota_fields 
+[gw0] [ 55%] PASSED test_project_resource_quota.py::test_project_resource_quota_fields 
+test_project_resource_quota.py::test_resource_quota_ns_create 
+[gw3] [ 56%] PASSED test_kontainer_engine_validation.py::test_min_nodes_cannot_be_greater_than_max 
+test_kontainer_engine_validation.py::test_min_nodes_cannot_be_zero 
+[gw0] [ 56%] PASSED test_project_resource_quota.py::test_resource_quota_ns_create 
+test_project_resource_quota.py::test_default_resource_quota_ns_set 
+[gw0] [ 57%] PASSED test_project_resource_quota.py::test_default_resource_quota_ns_set 
+test_project_resource_quota.py::test_quota_ns_create_exceed 
+[gw1] [ 57%] PASSED test_project_catalog.py::test_project_catalog_creation 
+[gw0] [ 58%] PASSED test_project_resource_quota.py::test_quota_ns_create_exceed 
+test_project_resource_quota.py::test_default_resource_quota_ns_create_invalid_combined 
+test_project_catalog.py::test_create_project_catalog_after_user_addition 
+[gw0] [ 58%] PASSED test_project_resource_quota.py::test_default_resource_quota_ns_create_invalid_combined 
+test_project_resource_quota.py::test_project_used_quota 
+[gw0] [ 59%] PASSED test_project_resource_quota.py::test_project_used_quota 
+test_project_resource_quota.py::test_default_resource_quota_project_update 
+[gw0] [ 59%] PASSED test_project_resource_quota.py::test_default_resource_quota_project_update 
+test_project_resource_quota.py::test_api_validation_project 
+[gw0] [ 60%] PASSED test_project_resource_quota.py::test_api_validation_project 
+test_project_resource_quota.py::test_api_validation_namespace 
+[gw0] [ 60%] PASSED test_project_resource_quota.py::test_api_validation_namespace 
+test_project_resource_quota.py::test_used_quota_exact_match 
+[gw0] [ 61%] PASSED test_project_resource_quota.py::test_used_quota_exact_match 
+test_project_resource_quota.py::test_add_remove_fields 
+[gw1] [ 61%] PASSED test_project_catalog.py::test_create_project_catalog_after_user_addition 
+test_project_resource_quota.py::test_container_resource_limit 
+[gw1] [ 62%] PASSED test_project_resource_quota.py::test_container_resource_limit 
+test_project_role_template_bindings.py::test_cannot_target_users_and_group 
+[gw1] [ 62%] PASSED test_project_role_template_bindings.py::test_cannot_target_users_and_group 
+test_project_role_template_bindings.py::test_must_have_target 
+[gw0] [ 63%] PASSED test_project_resource_quota.py::test_add_remove_fields 
+test_project_resource_quota.py::test_update_quota 
+[gw1] [ 63%] PASSED test_project_role_template_bindings.py::test_must_have_target 
+test_project_role_template_bindings.py::test_cannot_update_subject_or_proj 
+[gw0] [ 63%] PASSED test_project_resource_quota.py::test_update_quota 
+test_rbac.py::test_removing_user_from_cluster 
+[gw1] [ 64%] PASSED test_project_role_template_bindings.py::test_cannot_update_subject_or_proj 
+test_rbac.py::test_multi_user 
+[gw2] [ 64%] PASSED test_node.py::test_node_template_delete 
+test_node.py::test_cloud_credential_delete 
+[gw1] [ 65%] PASSED test_rbac.py::test_multi_user 
+test_rbac.py::test_project_owner 
+[gw2] [ 65%] PASSED test_node.py::test_cloud_credential_delete 
+test_node.py::test_writing_config_to_disk 
+[gw2] [ 66%] SKIPPED test_node.py::test_writing_config_to_disk 
+test_node.py::test_node_driver_schema 
+[gw2] [ 66%] PASSED test_node.py::test_node_driver_schema 
+test_node.py::test_amazon_node_driver_schema 
+[gw2] [ 67%] PASSED test_node.py::test_amazon_node_driver_schema 
+test_node.py::test_user_access_to_other_template 
+[gw0] [ 67%] PASSED test_rbac.py::test_removing_user_from_cluster 
+test_rbac.py::test_upgraded_setup_removing_user_from_cluster 
+[gw1] [ 68%] PASSED test_rbac.py::test_project_owner 
+test_rbac.py::test_api_group_in_role_template 
+[gw2] [ 68%] PASSED test_node.py::test_user_access_to_other_template 
+[gw0] [ 69%] PASSED test_rbac.py::test_upgraded_setup_removing_user_from_cluster 
+test_rbac.py::test_user_role_permissions 
+test_node.py::test_user_cluster_owner_access_to_pool 
+[gw2] [ 69%] SKIPPED test_node.py::test_user_cluster_owner_access_to_pool 
+test_rbac.py::test_readonly_cannot_perform_app_action 
+[gw1] [ 70%] PASSED test_rbac.py::test_api_group_in_role_template 
+test_rbac.py::test_readonly_cannot_move_namespace 
+[gw2] [ 70%] PASSED test_rbac.py::test_readonly_cannot_perform_app_action 
+test_rbac.py::test_member_can_perform_app_action 
+[gw0] [ 71%] PASSED test_rbac.py::test_user_role_permissions 
+[gw1] [ 71%] PASSED test_rbac.py::test_readonly_cannot_move_namespace 
+test_rbac.py::test_impersonation_passthrough 
+test_role_template.py::test_role_template_creation 
+[gw1] [ 72%] PASSED test_role_template.py::test_role_template_creation 
+test_role_template.py::test_administrative_role_template_creation 
+[gw1] [ 72%] PASSED test_role_template.py::test_administrative_role_template_creation 
+test_role_template.py::test_edit_builtin_role_template 
+[gw1] [ 72%] PASSED test_role_template.py::test_edit_builtin_role_template 
+test_role_template.py::test_context_prtb 
+[gw1] [ 73%] PASSED test_role_template.py::test_context_prtb 
+[gw0] [ 73%] PASSED test_rbac.py::test_impersonation_passthrough 
+test_role_template.py::test_context_crtb 
+test_rbac.py::test_permissions_can_be_removed 
+[gw1] [ 74%] PASSED test_role_template.py::test_context_crtb 
+test_role_template.py::test_cloned_role_permissions 
+[gw1] [ 74%] PASSED test_role_template.py::test_cloned_role_permissions 
+test_role_template.py::test_update_role_template_permissions 
+[gw0] [ 75%] PASSED test_rbac.py::test_permissions_can_be_removed 
+test_rbac.py::test_appropriate_users_can_see_kontainer_drivers 
+[gw0] [ 75%] PASSED test_rbac.py::test_appropriate_users_can_see_kontainer_drivers 
+test_secrets.py::test_secrets 
+[gw0] [ 76%] PASSED test_secrets.py::test_secrets 
+test_secrets.py::test_certificates 
+[gw0] [ 76%] PASSED test_secrets.py::test_certificates 
+test_secrets.py::test_docker_credential 
+[gw0] [ 77%] PASSED test_secrets.py::test_docker_credential 
+test_secrets.py::test_basic_auth 
+[gw0] [ 77%] PASSED test_secrets.py::test_basic_auth 
+test_secrets.py::test_ssh_auth 
+[gw0] [ 78%] PASSED test_secrets.py::test_ssh_auth 
+test_secrets.py::test_secret_creation_kubectl 
+[gw0] [ 78%] PASSED test_secrets.py::test_secret_creation_kubectl 
+test_secrets.py::test_malformed_secret_parse 
+[gw0] [ 79%] PASSED test_secrets.py::test_malformed_secret_parse 
+test_settings.py::test_create_read_only 
+[gw0] [ 79%] PASSED test_settings.py::test_create_read_only 
+test_settings.py::test_update_read_only 
+[gw0] [ 80%] PASSED test_settings.py::test_update_read_only 
+test_settings.py::test_get_read_only 
+[gw0] [ 80%] PASSED test_settings.py::test_get_read_only 
+test_settings.py::test_delete_read_only 
+[gw0] [ 81%] PASSED test_settings.py::test_delete_read_only 
+test_settings.py::test_create 
+[gw0] [ 81%] PASSED test_settings.py::test_create 
+test_settings.py::test_create_existing 
+[gw0] [ 81%] PASSED test_settings.py::test_create_existing 
+test_settings.py::test_update 
+[gw0] [ 82%] PASSED test_settings.py::test_update 
+test_settings.py::test_update_nonexisting 
+[gw0] [ 82%] PASSED test_settings.py::test_update_nonexisting 
+test_settings.py::test_update_link 
+[gw0] [ 83%] PASSED test_settings.py::test_update_link 
+test_system_project.py::test_system_project_created 
+[gw0] [ 83%] PASSED test_system_project.py::test_system_project_created 
+test_system_project.py::test_system_namespaces_assigned 
+[gw0] [ 84%] PASSED test_system_project.py::test_system_namespaces_assigned 
+test_system_project.py::test_system_project_cant_be_deleted 
+[gw0] [ 84%] PASSED test_system_project.py::test_system_project_cant_be_deleted 
+test_system_project.py::test_system_namespaces_default_svc_account 
+[gw0] [ 85%] PASSED test_system_project.py::test_system_namespaces_default_svc_account 
+test_tokens.py::test_certificates 
+[gw0] [ 85%] PASSED test_tokens.py::test_certificates 
+test_tokens.py::test_websocket 
+[gw0] [ 86%] PASSED test_tokens.py::test_websocket 
+test_tokens.py::test_api_token_ttl 
+[gw0] [ 86%] PASSED test_tokens.py::test_api_token_ttl 
+test_users.py::test_user_cant_delete_self 
+[gw0] [ 87%] PASSED test_users.py::test_user_cant_delete_self 
+test_users.py::test_user_cant_deactivate_self 
+[gw0] [ 87%] PASSED test_users.py::test_user_cant_deactivate_self 
+test_users.py::test_user_cant_use_username_as_password 
+[gw0] [ 88%] PASSED test_users.py::test_user_cant_use_username_as_password 
+test_users.py::test_password_too_short 
+[gw0] [ 88%] PASSED test_users.py::test_password_too_short 
+test_users.py::test_globalrolebinding_finalizer_cleanup 
+[gw0] [ 89%] PASSED test_users.py::test_globalrolebinding_finalizer_cleanup 
+test_users.py::test_roletemplate_finalizer_cleanup 
+[gw0] [ 89%] PASSED test_users.py::test_roletemplate_finalizer_cleanup 
+test_workloads.py::test_workload_image_change_private_registry 
+[gw0] [ 90%] PASSED test_workloads.py::test_workload_image_change_private_registry 
+test_workloads.py::test_workload_ports_change 
+[gw0] [ 90%] PASSED test_workloads.py::test_workload_ports_change 
+test_workloads.py::test_workload_probes 
+[gw0] [ 90%] PASSED test_workloads.py::test_workload_probes 
+test_workloads.py::test_workload_scheduling 
+[gw0] [ 91%] PASSED test_workloads.py::test_workload_scheduling 
+test_workloads.py::test_statefulset_workload_volumemount_subpath 
+[gw0] [ 91%] PASSED test_workloads.py::test_statefulset_workload_volumemount_subpath 
+test_workloads.py::test_workload_redeploy 
+[gw0] [ 92%] PASSED test_workloads.py::test_workload_redeploy 
+test_workloads.py::test_perform_workload_action_read_only 
+[gw0] [ 92%] PASSED test_workloads.py::test_perform_workload_action_read_only 
+[gw3] [ 93%] PASSED test_kontainer_engine_validation.py::test_min_nodes_cannot_be_zero 
+test_kontainer_engine_validation.py::test_node_volume_size_cannot_be_zero 
+[gw3] [ 93%] PASSED test_kontainer_engine_validation.py::test_node_volume_size_cannot_be_zero 
+test_kontainer_engine_validation.py::test_private_cluster_requires_vpc_subnets 
+[gw2] [ 94%] PASSED test_rbac.py::test_member_can_perform_app_action 
+test_rbac.py::test_readonly_cannot_edit_secret 
+[gw2] [ 94%] PASSED test_rbac.py::test_readonly_cannot_edit_secret 
+test_rbac.py::test_member_can_edit_secret 
+[gw2] [ 95%] PASSED test_rbac.py::test_member_can_edit_secret 
+[gw1] [ 95%] PASSED test_role_template.py::test_update_role_template_permissions 
+test_role_template.py::test_role_template_update_inherited_role 
+[gw3] [ 96%] PASSED test_kontainer_engine_validation.py::test_private_cluster_requires_vpc_subnets 
+test_logging.py::test_logging_test_action 
+[gw3] [ 96%] PASSED test_logging.py::test_logging_test_action 
+test_namespaced_secrets.py::test_namespaced_secrets 
+[gw3] [ 97%] PASSED test_namespaced_secrets.py::test_namespaced_secrets 
+test_namespaced_secrets.py::test_namespaced_certificates 
+[gw3] [ 97%] PASSED test_namespaced_secrets.py::test_namespaced_certificates 
+test_namespaced_secrets.py::test_namespaced_docker_credential 
+[gw3] [ 98%] PASSED test_namespaced_secrets.py::test_namespaced_docker_credential 
+test_namespaced_secrets.py::test_namespaced_basic_auth 
+[gw3] [ 98%] PASSED test_namespaced_secrets.py::test_namespaced_basic_auth 
+[gw1] [ 99%] PASSED test_role_template.py::test_role_template_update_inherited_role 
+test_role_template.py::test_kubernetes_admin_permissions 
+[gw1] [ 99%] PASSED test_role_template.py::test_kubernetes_admin_permissions 
+test_role_template.py::test_role_template_changes_revoke_permissions 
+[gw1] [100%] PASSED test_role_template.py::test_role_template_changes_revoke_permissions 
+
+========================== slowest 20 test durations ===========================
+127.85s call     suite/test_role_template.py::test_update_role_template_permissions
+127.31s call     suite/test_role_template.py::test_role_template_update_inherited_role
+121.11s call     suite/test_rbac.py::test_member_can_perform_app_action
+62.42s call     suite/test_kontainer_engine_validation.py::test_min_nodes_cannot_be_greater_than_max
+62.27s call     suite/test_kontainer_engine_validation.py::test_min_nodes_cannot_be_zero
+62.15s call     suite/test_kontainer_engine_validation.py::test_node_volume_size_cannot_be_zero
+62.15s call     suite/test_kontainer_engine_validation.py::test_private_cluster_requires_vpc_subnets
+52.55s call     suite/test_kontainer_engine_annotations.py::test_editing_eks_cluster_gives_temp_creds_annotation
+48.36s call     suite/test_alert.py::test_alert_access
+27.61s call     suite/test_pod_security_policies.py::test_service_accounts_have_role_binding
+18.66s call     suite/test_node.py::test_node_template_delete
+10.64s call     suite/test_cluster_catalog.py::test_cluster_catalog_templates_access
+9.20s call     suite/test_catalog.py::test_relative_paths
+7.88s call     suite/test_cluster_catalog.py::test_cluster_catalog_creation
+7.60s call     suite/test_project_catalog.py::test_project_catalog_creation
+7.19s call     suite/test_node_templates.py::test_user_can_only_view_own_template
+6.67s call     suite/test_project_catalog.py::test_project_catalog_access_before_app_creation
+5.53s call     suite/test_project_catalog.py::test_create_project_catalog_after_user_addition
+5.33s call     suite/test_catalog.py::test_invalid_catalog_chart_names
+4.82s call     suite/test_project_catalog.py::test_user_addition_after_creating_project_catalog
+=================== 207 passed, 4 skipped in 375.94 seconds ====================
+___________________________________ summary ____________________________________
+  rancher: commands succeeded
+  congratulations :)
