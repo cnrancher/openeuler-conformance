@@ -1,6 +1,6 @@
 ### Test Environment
 
-Rancher: v2.8.2-ent-rc3
+Rancher: v2.8.2-ent
 
 K3s: v1.28.6+k3s2
 
